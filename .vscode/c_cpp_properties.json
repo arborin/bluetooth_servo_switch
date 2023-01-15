@@ -6,7 +6,6 @@
             "compilerPath": "",
             "compilerArgs": [],
             "intelliSenseMode": "windows-msvc-x64",
-            "configurationProvider ": "ms-vscode.cpptools",
             "includePath": [
                 "${workspaceFolder}/**",
                 "C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino",
@@ -18,8 +17,7 @@
                 "c:\\program files (x86)\\arduino\\hardware\\tools\\avr\\avr\\include"
             ],
             "forcedInclude": ["C:\\Program Files (x86)\\Arduino\\hardware\\arduino\\avr\\cores\\arduino\\Arduino.h"],
-            "cStandard": "",
-            "cppStandard": "",
+
             "defines": [
                 "_DEBUG",
                 "UNICODE",

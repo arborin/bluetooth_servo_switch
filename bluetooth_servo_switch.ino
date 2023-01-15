@@ -8,6 +8,14 @@ int led = 13;
 int servoMin = 0;
 int servoMax = 30;
 
+void resetServo()
+{
+
+    myservo.write(servoMin);
+    delay(25);
+    myservo.detach();
+}
+
 void setup()
 {
     bt.begin(9600);     /* Define baud rate for software serial communication */
@@ -15,6 +23,7 @@ void setup()
     pinMode(led, OUTPUT);
 
     myservo.attach(9);
+    resetServo();
 
     Serial.println("> Start");
 }
@@ -47,10 +56,12 @@ void switchOn(String command)
 
 void servoMove(String command)
 {
+    myservo.attach(9);
+
     if (command == "on")
     {
         Serial.println("SERVO ON");
-        for (int pos = servoMin; pos <= servoMax; pos--)
+        for (int pos = 0; pos <= servoMax; pos++)
         {
             myservo.write(pos);
             delay(5);
@@ -66,4 +77,6 @@ void servoMove(String command)
             delay(5);
         }
     }
+
+    myservo.detach();
 }
